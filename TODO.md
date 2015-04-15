@@ -1,9 +1,10 @@
 Things which still need to be done:
 
-- [X] Implement R_F
-- [X] Implement R_C
-- [ ] Implement R_J
-- [ ] Implement R_D
+- [X] Implement `R_F`
+- [X] Implement `R_C`
+- [ ] Implement `R_J`
+- [ ] Implement `R_D`
+- [ ] Type checking
 - [ ] Add support for NumPy style docstrings
 - [ ] Module for calculating Legendre forms using Carlson forms
 - [ ] Add tests using the Boost datasets: scipy/special/tests/data/boost
