@@ -1,9 +1,9 @@
 Things which still need to be done:
 
-- [X] Implement R<sup>F</sup>
-- [X] Implement R<sup>C</sup>
-- [ ] Implement R<sup>J</sup>
-- [ ] Implement R<sup>D</sup>
+- [X] Implement R<sub>F</sub>
+- [X] Implement R<sub>C</sub>
+- [ ] Implement R<sub>J</sub>
+- [ ] Implement R<sub>D</sub>
 - [ ] Type checking
 - [ ] Add support for NumPy style docstrings
 - [ ] Module for calculating Legendre forms using Carlson forms
