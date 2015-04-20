@@ -8,6 +8,7 @@ http://arxiv.org/abs/math/9409227
 
 """
 
+from __future__ import division
 from numpy.lib import scimath
 
 def R_F(x, y, z, rtol=3e-4):
@@ -33,8 +34,8 @@ def R_F(x, y, z, rtol=3e-4):
             Z = -X-Y
             E2 = X * Y - Z**2
             E3 = X * Y * Z
-            result = (1/scimath.sqrt(Am)) * (1 - E2*(1.0/10) + E3*(1.0/14)
-                                             + (E2**2)*(1.0/24) - (E2*E3)*(3.0/44))
+            result = (1/scimath.sqrt(Am)) * (1 - E2*(1/10) + E3*(1/14)
+                                             + (E2**2)*(1/24) - (E2*E3)*(3/44))
             return result
 
 def R_C(x, y, rtol=2e-4):
@@ -50,15 +51,15 @@ def R_C(x, y, rtol=2e-4):
         x = x + abs(y)
         y = abs(y)
 
-    A0 = (x + 2*y) / 3.0
-    Q = (3*rtol)**(-1.0/8.0)*abs(A0 - x)
+    A0 = (x + 2*y) / 3
+    Q = (3*rtol)**(-1/8)*abs(A0 - x)
     A = _A_gen(x, y, y)
     for n, Am in enumerate(A):
         if 4**(-n) * Q < abs(Am):
             s = (y - A0) / (4**n * Am)
-            result = (1/scimath.sqrt(Am)) * (1 + s**2 * (3.0/10) + s**3 * (1.0/7)
-                                             + s**4 * (3.0/8) + s**5 * (9.0/22)
-                                             + s**6 * (159.0/208) + s**7 * (9.0/8))
+            result = (1/scimath.sqrt(Am)) * (1 + s**2 * (3/10) + s**3 * (1/7)
+                                             + s**4 * (3/8) + s**5 * (9/22)
+                                             + s**6 * (159/208) + s**7 * (9/8))
             return factor * result
 
 def R_J(x, y, z):
