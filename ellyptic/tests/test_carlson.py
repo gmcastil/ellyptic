@@ -29,19 +29,19 @@ class TestBoost():
             assert_approx_equal(carlson.R_C(x, y, rtol=RTOL), result,
                                 significant=SIG_FIGS)
 
-    # def test_RJ(self):
-    #     cases = self.data["ellint_rj_data_ipp-ellint_rj_data"]
-    #     for test in cases:
-    #         x, y, z, p, result = test
-    #         assert_approx_equal(carlson.R_J(x, y, z, p, rtol=RTOL), result,
-    #                             significant=SIG_FIGS)
+    def test_RJ(self):
+        cases = self.data["ellint_rj_data_ipp-ellint_rj_data"]
+        for test in cases:
+            x, y, z, p, result = test
+            assert_approx_equal(carlson.R_J(x, y, z, p, rtol=RTOL), result,
+                                significant=SIG_FIGS)
 
-    # def test_RD(self):
-    #     cases = self.data["ellint_rd_data_ipp-ellint_rd_data"]
-    #     for test in cases:
-    #         x, y, z, result = test
-    #         assert_approx_equal(carlson.R_D(x, y, z, rtol=RTOL), result,
-    #                             significant=SIG_FIGS)
+    def test_RD(self):
+        cases = self.data["ellint_rd_data_ipp-ellint_rd_data"]
+        for test in cases:
+            x, y, z, result = test
+            assert_approx_equal(carlson.R_D(x, y, z, rtol=RTOL), result,
+                                significant=SIG_FIGS)
 
     def teardown(self):
         pass

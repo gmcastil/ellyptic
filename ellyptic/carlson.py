@@ -62,7 +62,7 @@ def R_C(x, y, rtol=2e-4):
                                              + s**6 * (159/208) + s**7 * (9/8))
             return factor * result
 
-def R_J(x, y, z):
+def R_J(x, y, z, p, rtol=3e-4):
     r"""Computes the symmetric integral of the third kind
 
     .. math:: R_J(x, y, z) =
@@ -72,7 +72,7 @@ def R_J(x, y, z):
     """
     pass
 
-def R_D(x, y, z):
+def R_D(x, y, z, rtol=3e-4):
     r"""Computes a degenerate case of `R_F`
 
     .. math::
