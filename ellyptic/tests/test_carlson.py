@@ -8,7 +8,7 @@ import carlson
 
 BOOST_DATA = "./tests/data/boost.npz"
 SIG_FIGS = 14
-RTOL = 1E-40
+RTOL = 1E-80
 
 class TestBoost():
 
@@ -119,6 +119,34 @@ class TestDiscretes():
         result = carlson.R_J(0, 1, 2, 3, rtol=RTOL)
         assert_complex_equal(result,
                              0.77688623778582,
+                             significant=SIG_FIGS)
+        result = carlson.R_J(2, 3, 4, 5, rtol=RTOL)
+        assert_complex_equal(result,
+                             0.14297579667157,
+                             significant=SIG_FIGS)
+        result = carlson.R_J(2, 3, 4, -1+1j, rtol=RTOL)
+        assert_complex_equal(result,
+                             0.13613945827771-0.38207561624427j,
+                             significant=SIG_FIGS)
+        result = carlson.R_J(1j, -1j, 0, 2, rtol=RTOL)
+        assert_complex_equal(result,
+                             1.6490011662711,
+                             significant=SIG_FIGS)
+        result = carlson.R_J(-1+1j, -1-1j, 1, 2, rtol=RTOL)
+        assert_complex_equal(result,
+                             0.94148358841220,
+                             significant=SIG_FIGS)
+        result = carlson.R_J(1j, -1j, 0, 1-1j, rtol=RTOL)
+        assert_complex_equal(result,
+                             1.8260115229009 + 1.2290661908643j,
+                             significant=SIG_FIGS)
+        result = carlson.R_J(-1+1j, -1-1j, 1, -3+1j, rtol=RTOL)
+        assert_complex_equal(result,
+                             -0.61127970812028-1.0684038390007j,
+                             significant=SIG_FIGS)
+        result = carlson.R_J(-1+1j, -2-1j, -1j, -1+1j, rtol=RTOL)
+        assert_complex_equal(result,
+                             1.8249027393704-1.2218475784827j,
                              significant=SIG_FIGS)
 
 def assert_complex_equal(a, b, **kwargs):

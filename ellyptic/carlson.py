@@ -39,7 +39,7 @@ def R_F(x, y, z, rtol=3e-4):
                                              + (E2**2)*(1/24) - (E2*E3)*(3/44))
             return result
 
-def R_C(x, y, rtol=2e-4):
+def R_C(x, y, rtol=3e-4):
     r"""Computes a degenerate case of `R_J`
 
     .. math:: R_C(x, y) = \frac{1}{2}\int_0^\infty
