@@ -102,6 +102,7 @@ def R_J(x, y, z, p, rtol=3e-4):
         contrib += (4**(-m)/dm)*R_C(1, 1+em, rtol)
         if n == 0 or m == n - 1:
             break
+
     return result + 6*contrib
 
 def R_D(x, y, z, rtol=3e-4):
