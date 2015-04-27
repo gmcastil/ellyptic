@@ -8,7 +8,7 @@ import carlson
 
 BOOST_DATA = "./tests/data/boost.npz"
 SIG_FIGS = 14
-RTOL = 1E-80
+RTOL = 1E-40
 
 class TestBoost():
 
